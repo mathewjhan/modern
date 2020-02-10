@@ -9,7 +9,7 @@
     #wrapper{
     position:absolute;
     top:0;left:0;right:0;bottom:0;
-    background-image: url("./bg.jpg");
+    background-image: url("./bg");
     background-repeat: no-repeat;
     z-index:-999;
     overflow:hidden;
@@ -40,7 +40,7 @@
         height:100%;
         top:0;left:0;
         z-index:-1;
-        background-image:url("./bg-blurred.jpg");
+        background-image:url("./bg-blurred");
         background-attachment: fixed;
         filter:brightness(60%);
     }
@@ -225,8 +225,10 @@ class Login {
         const d = new Date();
         $("#time-text").textContent = `${pad0(d.getHours())}:${pad0(d.getMinutes())}`;
         $("#date-text").textContent = `${d.getDayOfWeek()}, ${d.getMonthName()} ${d.getDate()}`.toLowerCase();
-        setTimeout(this.updateTime, 1000);
+        setInterval(this.updateTime, 5000);
     }
+
+    
 
     // events
     bindInactive() {
